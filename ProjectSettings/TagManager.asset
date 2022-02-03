@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - OutZone
+  - Jump!
+  - multijump
+  - multijump2
+  - multijump3
   layers:
   - Default
   - TransparentFX

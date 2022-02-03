@@ -101,7 +101,7 @@ public class PL : MonoBehaviour
 
         }
 
-        if (tmp.y < -100.0f)
+        if (tmp.y < -30.0f)
         {
             SceneManager.LoadScene("SampleScene");
         }
@@ -118,22 +118,25 @@ public class PL : MonoBehaviour
         if(time<29)
         {
             jump_barst = 1;
-            if (time == 20)
+            if (time == 28)
                 audioSource.PlayOneShot(sound1);
         }
         else if(time<59)
         {
             jump_barst = 2;
-            if (time == 50)
+            if (time == 58)
                 audioSource.PlayOneShot(sound2);
         }
         else if(time<89)
         {
             jump_barst = 3;
-          
+            if (time % 88 == 0)
+            {
+                audioSource.PlayOneShot(sound3);
+            }
 
         }
-        else if (time > 89)
+        else if (time > 90)
         {
             jump_barst = 4;
             if(time%30==0)
@@ -160,6 +163,11 @@ public class PL : MonoBehaviour
             out_p++;
            
         }
+        else if (triger.gameObject.tag == "Respawn")
+        {
+            SceneManager.LoadScene("Result");
+
+        }
 
     }
 
@@ -172,7 +180,7 @@ public class PL : MonoBehaviour
                 if (a == 1)
                     yield return new WaitForSeconds(0.1f * a);
                 else if (a == 2)
-                    yield return new WaitForSeconds(0.3f);
+                    yield return new WaitForSeconds(0.38f);
                 else if (a == 3)
                     yield return new WaitForSeconds(0.36f);
                 else if (a == 4)

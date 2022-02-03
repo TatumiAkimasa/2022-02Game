@@ -26,6 +26,6 @@ public class ScoreText : MonoBehaviour
         //アクションボタン自身とそれぞれのtext連携用
         out_P = script.out_p;
         this.targetText = this.GetComponent<Text>();
-        this.targetText.text = out_P.ToString();
+        this.targetText.text = "OUT:"+(out_P/3).ToString();
     }
 }
